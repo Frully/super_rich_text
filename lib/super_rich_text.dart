@@ -1,6 +1,5 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 enum MarkerType { function, sameFunction, text, url }
 
@@ -210,17 +209,17 @@ class SuperRichText extends StatelessWidget {
                     break;
 
                   case MarkerType.url:
-                    try {
-                      if (await canLaunch(marker.urls![index!])) {
-                        launch(marker.urls![index]);
-                      } else {
-                        throw 'cant launch';
-                      }
-                    } catch (msg) {
-                      if (onError != null) {
-                        onError(index ?? 0, msg);
-                      }
-                    }
+                    // try {
+                    //   if (await canLaunch(marker.urls![index!])) {
+                    //     launch(marker.urls![index]);
+                    //   } else {
+                    //     throw 'cant launch';
+                    //   }
+                    // } catch (msg) {
+                    //   if (onError != null) {
+                    //     onError(index ?? 0, msg);
+                    //   }
+                    // }
                     break;
 
                   default:
